@@ -27,7 +27,7 @@
   <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
   <script type="text/javascript">
 
-  var animals = ["cat", "dog", "bird", "fish"];
+  var animals = ["kitten", "puppy", "parrot", "panda"];
 
   //function for putting the JSON data into a div
   function displayAnimalImages() {
@@ -67,7 +67,7 @@
 
       var animalImage = $("<img>");
 
-  // Giving the image an attribute of src
+  // Giving the image an attribute of src and pulling specific images
 
       animalImage.attr("src", results[i].images.fixed_height_small_still.url);
 
