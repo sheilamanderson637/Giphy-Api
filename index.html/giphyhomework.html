@@ -49,7 +49,7 @@
   // Looping over the results
   for (var i = 0; i < results.length; i++) {
 
-    if (results[i].rating !== "r") {
+    if (results[i].rating === "g") {
 
   // Creating a div with the class "item"   
 
@@ -69,7 +69,7 @@
 
   // Giving the image an attribute of src
 
-      animalImage.attr("src", results[i].images.fixed_height.url);
+      animalImage.attr("src", results[i].images.fixed_height_small_still.url);
 
   // Appending the paragraph and animalImage we created to the "animalsDiv" div
       animalsDiv.append(p);
