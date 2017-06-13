@@ -1,36 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
- 	<meta charset="UTF-8">
-	<title>Giphy Animal</title>
-
-  <!-- <link rel="stylesheet" href="assets/css/reset.css">
-  <link rel="stylesheet" href="assets/css/style.css"> -->
-  
-</head>
-
-<body>
-  <div class="container">
-  <h1>Funny Animal Giphs</h1>
-
-  <!-- Animal images will go here -->
-  <div id="animals-view"></div>
-
-  <!-- Animal buttons will go here -->
-  <div id="buttons-view"></div>
-
-  <!-- Form to add an animal -->
-  <form id="animal-form">
-    <label for ="animal-input">Add an animal here</label>
-    <input type ="text" id="animal-input">
-   
-  <!-- Trigger to add a new animal button -->
-    <input id="add-animal" type="submit" value="Submit">
-    </form>
-  </div>
-
-  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <script type="text/javascript">
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script type="assets/javascript/app.js">
 
   var animals = ["kitten", "puppy", "parrot", "panda"];
 
@@ -56,7 +25,7 @@
 
     if (results[i].rating !== "r" && results[i].rating !== "pg13") {
 
-  // Creating a div with the class "item" to select on rating and show rating for images selected 
+  // Creating a div with the class "item"   
 
       var animalsDiv = $("<div class='item'>")
 
@@ -74,7 +43,7 @@
 
   // Giving the image an attribute of src and pulling specific images
 
-      animalImage.attr("src", results[i].images.fixed_height_small_still.url);
+      animalImage.attr("src", results[i].images.fixed_height_small.url);
       console.log(response);
 
   // Appending the paragraph and animalImage we created to the "animalsDiv" div
@@ -83,9 +52,7 @@
 
   // Prepending the animals Div to the "#animals-view" div in the HTML
       $("#animals-view").prepend(animalsDiv);
-
-  // ??
-}
+  }
   }
 });
 };
@@ -126,5 +93,3 @@
       renderButtons();    
     
   </script>
-</body>
-</html>
