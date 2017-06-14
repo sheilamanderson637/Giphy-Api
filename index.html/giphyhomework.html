@@ -68,18 +68,25 @@
 
       var p = $("<p>").text("Rating: " + rating);
 
-  // Creating an image tag
+  // Creating an image tags for still and moving
 
-      var animalImage = $("<img>");
+      var animalImageStill = $("<img>");
 
-  // Giving the image an attribute of src and pulling specific images
+      var animalImageMoving = $("<img>");
 
-      animalImage.attr("src", results[i].images.fixed_height_small_still.url);
-      console.log(response);
+
+  // Giving the still images an attribute of src and pulling specific images
+
+      animalImageStill.attr("src", results[i].images.fixed_height_small_still.url);
+
+  // Giving the moving images an attribute of scr and pulling specific images
+  
+      animalImageMoving.attr("src", results[i].images.fixed_height_small.url);
+      
 
   // Appending the paragraph and animalImage we created to the "animalsDiv" div
       animalsDiv.append(p);
-      animalsDiv.append(animalImage);
+      animalsDiv.append(animalImageStill, animalImageMoving);
 
   // Prepending the animals Div to the "#animals-view" div in the HTML
       $("#animals-view").prepend(animalsDiv);
