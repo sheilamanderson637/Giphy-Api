@@ -1,3 +1,58 @@
 body {
-	background-color: lightblue;
+	align-items: center;
+	background: black;
+	color: white;
+	font-family: century;
+	font-size: 30px;
+	margin: 20px;  
+	width: 100%;
+}
+
+header {
+	font-size: 60px;
+	margin-bottom: 50px;
+}
+
+#animal-input {
+	font-size: 30px;
+	height: 30px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	width: 200px;
+}
+
+#add-animal {
+	background-color: green;
+	color: white;
+	font-size: 16px;
+	height: 40px;
+	margin-left: 20px;
+	width: 100px;
+}
+
+.item {
+	background-color: grey;
+	color: white;
+	font-size: 20px;		
+}
+
+.animal {
+	background-color: blue;
+	float: right;
+	font-size: 20px;
+	margin-right: 20px;
+}
+
+img {
+	border: solid black 5px;
+	display: inline-block;
+	height: 200px;
+	margin-left: 20px;
+	margin-top: 20px;
+	width: 200px;
+}
+
+p {
+	margin-left: 80px;
+	padding-top: 20px;
 }
