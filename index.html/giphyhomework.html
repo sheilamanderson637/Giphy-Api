@@ -11,7 +11,7 @@
 
 <body>
   <div class="container">
-  <h1>Funny Animal Giphs</h1>
+  <h1>Funny Animal Gifs</h1>
 
   <!-- Animal images will go here -->
   <div id="animals-view"></div>
@@ -68,31 +68,59 @@
 
       var p = $("<p>").text("Rating: " + rating);
 
-  // Creating an image tags for still and moving
+  // Creating a image tags for still and moving
 
-      var animalImageStill = $("<img>");
+      var animalImage = $("<img>");
 
-      var animalImageMoving = $("<img>");
+  // Set the default state of the SRC attribute
+
+      animalImage.attr("src", results[i].images.fixed_height_small_still.url);
+
+  // Set data-state
+
+      animalImage.attr("data-state", "still");
 
 
   // Giving the still images an attribute of src and pulling specific images
 
-      animalImageStill.attr("src", results[i].images.fixed_height_small_still.url);
+      animalImage.attr("animalImageStill", results[i].images.fixed_height_small_still.url);
+
 
   // Giving the moving images an attribute of scr and pulling specific images
   
-      animalImageMoving.attr("src", results[i].images.fixed_height_small.url);
+      animalImage.attr("animalImageMoving", results[i].images.fixed_height_small.url);
       
 
   // Appending the paragraph and animalImage we created to the "animalsDiv" div
       animalsDiv.append(p);
-      animalsDiv.append(animalImageStill, animalImageMoving);
+      
+      animalsDiv.append(animalImage);
+
 
   // Prepending the animals Div to the "#animals-view" div in the HTML
-      $("#animals-view").prepend(animalsDiv);
+       $("#animals-view").prepend(animalsDiv);
 
-  // ??
-}
+  // Setting up the on click function for the images
+
+      $("img").on("click", function() {
+      
+  // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+      
+      var state = $(this).attr("data-state");
+      console.log(this);
+
+  // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+  // Then, set the image's data-state to animate
+  // Else set src to the data-still value
+      if (state === "still") {
+        $(this).attr("src", $(this).attr("animalImageMoving"));
+        $(this).attr("data-state", "animate");
+      } else {
+        $(this).attr("src", $(this).attr("animalImageStill"));
+        $(this).attr("data-state", "still");
+      }
+    });
+  }
   }
 });
 };
